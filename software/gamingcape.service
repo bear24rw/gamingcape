@@ -1,0 +1,10 @@
+[Unit]
+Description=Initialize GamingCape
+Type=idle
+
+[Service]
+Type=oneshot
+ExecStart=/home/root/init_gamingcape.sh
+
+[Install]
+WantedBy=multi-user.target 
