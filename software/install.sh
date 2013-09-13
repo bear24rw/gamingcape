@@ -14,6 +14,10 @@ echo "Editing boot args to disable hdmi"
 echo "optargs=quiet drm.debug=7 capemgr.disable_partno=BB-BONELT-HDMI,BB-BONELT-HDMIN" > /mnt/card/uEnv.txt
 echo "Unmounting partition"
 umount /mnt/card/
+echo "Installing custom kernel"
+rm /boot/uImage
+cp uImage /boot/uImage-custom
+ln -s /boot/uImage-custom /boot/uImage
 echo "Disabling some services"
 systemctl disable mpd
 systemctl disable gdm
