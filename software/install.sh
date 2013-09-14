@@ -29,12 +29,16 @@ echo "Intalling bash_profile"
 cp bash_profile .bash_profile
 echo "Disabling git sslVerify"
 git config --global http.sslVerify false
-echo "Updating opkg"
-opkg update
-echo "Installing python-distutils"
-opkg install python-distutils
-echo "Installing python-compile"
-opkg install python-compile
+echo "Symlinking AIN0 and AIN2"
+ln -s `ls /sys/devices/ocp.*/helper.*/AIN0` AIN0
+ln -s `ls /sys/devices/ocp.*/helper.*/AIN2` AIN2
+
+#echo "Updating opkg"
+#opkg update
+#echo "Installing python-distutils"
+#opkg install python-distutils
+#echo "Installing python-compile"
+#opkg install python-compile
 
 # wget http://prdownloads.sourceforge.net/scons/scons-2.3.0.tar.gz
 # tar xvf scons-2.3.0.tar.gz
