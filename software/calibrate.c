@@ -59,8 +59,12 @@ void get_data() {
 		b = !atoi(buf_b);
 
 		// compensate using calibration data
-		joy_x = (raw_joy_x - center_x) * abs(1000 / (max_x - center_x));
-		joy_y = (raw_joy_y - center_y) * abs(1000 / (max_y - center_y));
+		joy_x = (raw_joy_x - center_x) * 1000;
+		joy_y = (raw_joy_y - center_y) * 1000;
+		if (joy_x > 0) joy_x /= (max_x - center_x);
+		else           joy_x /= (center_x - min_x);
+		if (joy_y > 0) joy_y /= (max_y - center_y);
+		else           joy_y /= (center_y - min_y);
 
 		lseek(fd_x,0,0);
 		lseek(fd_y,0,0);
