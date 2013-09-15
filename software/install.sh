@@ -27,6 +27,8 @@ echo "Changing default shell to bash"
 chsh -s /bin/bash
 echo "Intalling bash_profile"
 cp bash_profile .bash_profile
+echo "Installing xinitrc"
+cp xinitrc .xinitrc
 echo "Disabling git sslVerify"
 git config --global http.sslVerify false
 echo "Symlinking AIN0 and AIN2"
