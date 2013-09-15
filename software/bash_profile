@@ -1,2 +1,2 @@
 echo "Starting X11..."
-startx /home/root/gamingcape_fceu/bin/fceux --fullscreen 1 --xres 320 --yres 240 /home/root/Contra.nes
+startx

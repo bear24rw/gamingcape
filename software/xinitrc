@@ -1,0 +1,4 @@
+xset s off
+xset s noblank
+
+exec /home/root/gamingcape_fceu/bin/fceux --fullscreen 1 --xres 320 --yres 240 /home/root/mario.nes
